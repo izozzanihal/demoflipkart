@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text], input[type=number], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 3px solid #F4DB7D;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color:  #F4DB7D;
+            color: #9DAAF2(255, 255, 255);
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color:  #F4DB7D;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #9DAAF2;
+            padding: 10px;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+            margin-top: 6px;
+            padding: 20px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        @media screen and (max-width: 600px) {
+            .column, input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <form id="submit-form" action="https://script.google.com/macros/s/AKfycbz3PmoUnCsX_kSp-3eJImjUSRiyJCjUuHYDGZIWgH7KwTFxkBeMAxwRyCVN-Nc8vSjZ/exec" method="post" onsubmit="return validateForm()">
+                    <input type="number" id="reg-no" name="reg-no" placeholder="Enter Group leader 10 Bit Reg No...">  
+                    <input type="number" id="adno" name="adno" placeholder="Enter Group leader 4 Bit Admission No...">
+                    <input type="text" id="name" name="name" placeholder="Enter Your Group leader Name...">
+                    <select id="Department" name="department" aria-placeholder="Department">
+                        <option value="Automobile Engineering">Automobile Engineering</option>
+                        <option value="Architecture">Architecture</option>
+                        <option value="Civil engineering">Civil engineering</option>
+                        <option value="Computer Engineering">Computer Engineering</option>
+                        <option value="Electric and Electronic Engineering">Electric and Electronic Engineering</option>
+                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    </select>
+                    <select name="semester" id="semester">
+                        <option value="Semester-2">Semester-2</option>
+                        <option value="Semester-4">Semester-4</option>
+                        <option value="Semester-6">Semester-6</option>
+                    </select>
+                    <select name="category1" id="category1"> 
+                        <option value="100">program 100</option>
+                        <option value="101">program 101</option>
+                        <option value="102">program 102</option>
+                        <option value="103">program 103</option>
+                        <option value="104">program 104</option>
+                        <option value="105">program 105</option>
+                        <option value="106">program 106</option>
+                        <option value="107">program 107</option>
+                        <option value="108">program 108</option>
+                        <option value="109">program 109</option>
+                        <option value="110">program 110</option>
+                        <option value="111">program 111</option>
+                        <option value="112">program 112</option>
+                        <option value="113">program 113</option>
+                        <option value="114">program 114</option>
+                        <option value="115">program 115</option>
+                        <option value="116">program 116</option>
+                        <option value="117">program 117</option>
+                    </select>
+                    <LAbel style="color: aliceblue;"><h3>Enter Group Members Names And Admission No 
+                      
+                    </h3></LAbel>
+                    <textarea name="group" id="" cols="30" rows="10" placeholder=" student 1- Admission no 
+ student 2- Admission no"></textarea>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function validateForm() {
+            var regNo = document.getElementById("reg-no").value;
+            var adNo = document.getElementById("adno").value;
+            var name = document.getElementById("name").value;
+
+            if (regNo.length !== 10) {
+                alert("Please fill in Registration Number (10-bit) ");
+                return false;
+            }
+            if (adNo.length !== 4) {
+                alert("Please fill in Admission Number (4-bit).");
+                return false;
+            }
+            if (name.trim() === "") {
+                alert("Please enter your name");
+                return false;
+            }
+            
+
+            showModal();
+            return true;
+        }
+
+        
+        function showModal() {
+            alert("Form submitted successfully!");
+            window.open("https://izozzanihal.github.io/weight-covert/", "_self");
+        }
+
+
+    </script>
+</body>
+</html>
